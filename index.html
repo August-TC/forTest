@@ -227,7 +227,7 @@
                         "ms"
                 },
 
-                click: function (e) {
+                tap: function (e) {
                     var mp = -1;
                     console.log(e.path[1].id);
                     alert(e.path[1].id);
@@ -268,39 +268,39 @@
                     $("#id_pic").attr("src", "img/" + mp.toString() + ".png");
                 },
 
-                touchEnd: function (e) {
-                    var mp = -1;
-                    console.log(this.realIndex);
-                    switch (this.realIndex) {
-                        case 0:
-                            mp = 1;
-                            break;
-                        case 1:
-                            mp = 3;
-                            break;
-                        case 2:
-                            mp = 9;
-                            break;
-                        case 3:
-                            mp = 12;
-                            break;
-                        case 4:
-                            mp = 15;
-                            break;
-                        case 5:
-                            mp = 18;
-                            break;
-                        case 6:
-                            mp = 22;
-                            break;
+                // touchEnd: function (e) {
+                //     var mp = -1;
+                //     console.log(this.realIndex);
+                //     switch (this.realIndex) {
+                //         case 0:
+                //             mp = 1;
+                //             break;
+                //         case 1:
+                //             mp = 3;
+                //             break;
+                //         case 2:
+                //             mp = 9;
+                //             break;
+                //         case 3:
+                //             mp = 12;
+                //             break;
+                //         case 4:
+                //             mp = 15;
+                //             break;
+                //         case 5:
+                //             mp = 18;
+                //             break;
+                //         case 6:
+                //             mp = 22;
+                //             break;
 
-                        default:
-                            return;
-                            break;
-                    }
-                    flag = mp;
-                    $("#id_pic").attr("src", "img/" + mp.toString() + ".png");
-                },
+                //         default:
+                //             return;
+                //             break;
+                //     }
+                //     flag = mp;
+                //     $("#id_pic").attr("src", "img/" + mp.toString() + ".png");
+                // },
 
                 slideChange: function () {
                     var p = -1;
