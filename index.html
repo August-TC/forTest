@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>唐三彩载乐俑</title>
+
+    <!-- 链接轮播图CSS样式 -->
+    <link rel="stylesheet" href="css/dist/swiper.min.css">
+
+    <!-- 链接页面主要CSS样式-->
+    <link rel="stylesheet" href="css/content_style.css" />
+
+    <!-- jQuery js库 -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+
+    <!-- 内容页面 -->
+    <div id="main" class="core">
+
+
+        <!-- 标题部分 -->
+        <div class="header" id="itemName">
+            <p style="display: table-cell; vertical-align: middle;">「载乐俑」</p>
+        </div>
+
+        <!-- 主图片展示区域 -->
+        <div class="main-picture-part" id="mainpic">
+
+            <!-- 主图片展示 -->
+            <img id="id_pic" src="img/1.png" class="main-pic" alt="" usemap="#map1" />
+
+        </div>
+        <!-- 细节展示区域 -->
+        <div class="detail-part" id="detail_prt">
+
+            <!-- 细节图片展示区域 -->
+            <div class="detail-picture">
+                <img src="img/guanzi.png" id="dtl-picture" class="detail-pic-img" />
+            </div>
+
+            <!-- 细节内容展示区域 -->
+            <div class="detail-content">
+                <p id="detail-title"></p>
+                <p id="detail-txt"></p>
+            </div>
+
+        </div>
+
+        <!-- 轮播图展示区域 -->
+        <div class="dock">
+
+            <!-- 轮播图容器 -->
+            <div class="swiper-container" id="dock-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" id="slide6">
+                        <img src="img/yong6.png" data-swiper-parallax="0" data-swiper-parallax-scale="0.9" />
+                    </div>
+                    <div class="swiper-slide" id="slide7">
+                        <img src="img/yong7.png" data-swiper-parallax="0" data-swiper-parallax-scale="0.9" />
+                    </div>
+                    <div class="swiper-slide" id="slide1">
+                        <img src="img/yong1.png" data-swiper-parallax="0" data-swiper-parallax-scale="0.9" />
+                    </div>
+                    <div class="swiper-slide" id="slide2">
+                        <img src="img/yong2.png" data-swiper-parallax="0" data-swiper-parallax-scale="0.9" />
+                    </div>
+                    <div class="swiper-slide" id="slide3">
+                        <img src="img/yong3.png" data-swiper-parallax="0" data-swiper-parallax-scale="0.9" />
+                    </div>
+                    <div class="swiper-slide" id="slide4">
+                        <img src="img/yong4.png" data-swiper-parallax="0" data-swiper-parallax-scale="0.9" />
+                    </div>
+                    <div class="swiper-slide" id="slide5">
+                        <img src="img/yong5.png" data-swiper-parallax="0" data-swiper-parallax-scale="0.9" />
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <!-- <div class="swiper-pagination"></div> -->
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- 轮播图 JS -->
+    <script src="js/dist/swiper.min.js"></script>
+
+    <!-- 内置JS -->
+    <script type="text/javascript">
+
+        $("#dock-swiper").addClass("swiper-show");
+
+        var pre = 0;
+
+        function changeContent(pos) {
+            switch (pos) {
+                case 1:
+                    $("#dtl-picture").attr("src", "img/sheng.png");
+                    $("#detail-title").text("「笙」");
+                    $("#detail-txt").text("中原乐器 自周以来存在至今，19世纪下半叶传到欧洲对风琴等乐器有所影响。");
+                    // play("audio/06sheng.mp3");
+                    break;
+                case 2:
+                    $("#dtl-picture").attr("src", "img/pipa.png");
+                    $("#detail-title").text("「琵琶」");
+                    $("#detail-txt").text("自汉代传入的波斯乐器，西汉文献有记载。这一件是四弦曲项琵琶。");
+                    // play("audio/03pipa.mp3");
+                    break;
+                case 5:
+                    $("#dtl-picture").attr("src", "img/hengdi.png");
+                    $("#detail-title").text("「横笛」");
+                    $("#detail-txt").text("其来自中原还是西域目前仍有争议。");
+                    // play("audio/05hengdi.mp3");
+                    break;
+                case 6:
+                    $("#dtl-picture").attr("src", "img/paixiao.png");
+                    $("#detail-title").text("「排箫（之一）」");
+                    $("#detail-txt").text("来自西域，为竹子制成。 \n 中原乐器，宫廷中用使用。");
+                    // play("audio/02paixiao.mp3");
+                    break;
+                case 4:
+                    $("#dtl-picture").attr("src", "img/konghou.png");
+                    $("#detail-title").text("「小箜篌」");
+                    $("#detail-txt").text("汉代时自波斯传入，在宫廷雅乐中一直存在。");
+                    // play("audio/01konghou.mp3");
+                    break;
+                case 3:
+                    $("#dtl-picture").attr("src", "img/guanzi.png");
+                    $("#detail-title").text("「管子」");
+                    $("#detail-txt").text("古称筚篥，汉代自龟兹传来，音色雄厚，常用于表现边塞离别的之情。今民乐管弦乐队仍有使用。");
+                    // play("audio/04guanzi.mp3");
+                    break;
+                case 7:
+                    $("#dtl-picture").attr("src", "img/paixiao2.png");
+                    $("#detail-title").text("「排箫（之二）」");
+                    $("#detail-txt").text("来自西域，为竹子制成。 \n 中原乐器，宫廷中用使用。");
+                    // play("audio/02paixiao.mp3");
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        var scaled = false;
+
+        function showDetail(pos) {
+
+            if (pre != pos) {
+                $("#itemName").fadeOut();
+                $("#id_pic").removeClass("mainpic-transform-reset");
+                $("#id_pic").addClass("mainpic-transform");
+                scaled = true;
+                $("#detail_prt").fadeOut(500);
+                // setTimeout("changeContent("+pos+")",500);
+                setTimeout(() => {
+                    changeContent(pos);
+                    $("#detail_prt").fadeIn(500);
+                }, 500);
+                pre = pos;
+            } else {
+                $("#detail_prt").fadeOut(500);
+                $("#id_pic").addClass("mainpic-transform-reset");
+                $("#id_pic").removeClass("mainpic-transform");
+                scaled = false;
+                $("#itemName").fadeIn();
+                // stop();
+                pre = 0;
+            }
+
+        }
+
+        let element = this;
+        var flag = -1;
+
+        /**
+         * 初始化轮播图，同时配置轮播图
+         */
+
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 5,
+            parallax: true,
+            loop: true,
+            slideToClickedSlide: true,
+            centeredSlides: !0,
+            watchSlidesProgress: !0,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                1024: {
+                    slidesPerView: 7,
+                },
+                768: {
+                    slidesPerView: 5,
+                },
+                640: {
+                    slidesPerView: 5,
+                },
+                320: {
+                    slidesPerView: 5,
+                }
+            },
+            on: {
+                progress: function () {
+                    var b, c, d;
+                    for (b = 0; b < this.slides.length; b++) {
+                        c = this.slides[b];
+                        d = c.progress;
+                        this.zoom.scale = Math.min(Math.abs(.2 * d), 1);
+                        es = c.style;
+                        es.opacity = Math.max(1 - Math.min(Math.abs(d / 2.2), 1), 0.05); //opacity控制左右图片的透明度
+                        es.webkitTransform = es.MsTransform = es.msTransform = es.MozTransform = es.OTransform =
+                            es.transform = "translate3d(0px,0," + -Math.abs(150 * d) + "px)"; //150d控制左右图片的距离
+                    }
+                },
+
+                setTransition: function (b) {
+                    //自定义事件 
+                    for (var c = 0; c < this.slides.length; c++) es = this.slides[c].style,
+                        es.webkitTransitionDuration = es.MsTransitionDuration = es.msTransitionDuration =
+                        es.MozTransitionDuration = es.OTransitionDuration = es.transitionDuration = b +
+                        "ms"
+                },
+
+                click: function (e) {
+                    var mp = -1;
+                    console.log(e.path[1].id);
+                    switch (e.path[1].id) {
+                        case "slide1":
+                            showDetail(1);
+                            mp = 9;
+                            break;
+                        case "slide2":
+                            showDetail(2);
+                            mp = 12;
+                            break;
+                        case "slide3":
+                            showDetail(3);
+                            mp = 15;
+                            break;
+                        case "slide4":
+                            showDetail(4);
+                            mp = 18;
+                            break;
+                        case "slide5":
+                            showDetail(5);
+                            mp = 22;
+                            break;
+                        case "slide6":
+                            showDetail(6);
+                            mp = 1;
+                            break;
+                        case "slide7":
+                            showDetail(7);
+                            mp = 3;
+                            break;
+                        default:
+                            return;
+                            break;
+                    }
+                    flag = mp;
+                    $("#id_pic").attr("src", "img/" + mp.toString() + ".png");
+                },
+
+                touchEnd: function (e) {
+                    var mp = -1;
+                    console.log(this.realIndex);
+                    switch (this.realIndex) {
+                        case 0:
+                            mp = 1;
+                            break;
+                        case 1:
+                            mp = 3;
+                            break;
+                        case 2:
+                            mp = 9;
+                            break;
+                        case 3:
+                            mp = 12;
+                            break;
+                        case 4:
+                            mp = 15;
+                            break;
+                        case 5:
+                            mp = 18;
+                            break;
+                        case 6:
+                            mp = 22;
+                            break;
+
+                        default:
+                            return;
+                            break;
+                    }
+                    flag = mp;
+                    $("#id_pic").attr("src", "img/" + mp.toString() + ".png");
+                },
+
+                slideChange: function () {
+                    var p = -1;
+                    switch (this.realIndex) {
+                        case 0:
+                            p = 6;
+                            break;
+                        case 1:
+                            p = 7;
+                            break;
+                        case 2:
+                            p = 1;
+                            break;
+                        case 3:
+                            p = 2;
+                            break;
+                        case 4:
+                            p = 3;
+                            break;
+                        case 5:
+                            p = 4;
+                            break;
+                        case 6:
+                            p = 5;
+                            break;
+
+                        default:
+                            return;
+                            break;
+                    }
+                    if (!scaled) {
+                        changeContent(p);
+                    }
+                },
+            },
+        });
+
+        function slideToPic(flag) {
+            var aimPic = -1;
+            // 识别当前flag
+            switch (flag) {
+                // 当flag识别为24、1和2，跳转人偶6	
+                case 24:
+                    aimPic = 6;
+                    break;
+                case 1:
+                    aimPic = 6;
+                    break;
+                case 2:
+                    aimPic = 6;
+                    break;
+
+                    // 当flag识别为3到5，跳转人偶7	
+                case 3:
+                    aimPic = 7;
+                    break;
+                case 4:
+                    aimPic = 7;
+                    break;
+                case 5:
+                    aimPic = 7;
+                    break;
+
+                    // 当flag识别为6到9，跳转人偶1	
+                case 6:
+                    aimPic = 1;
+                    break;
+                case 7:
+                    aimPic = 1;
+                    break;
+                case 8:
+                    aimPic = 1;
+                    break;
+                case 9:
+                    aimPic = 1;
+                    break;
+
+                    // 当flag识别为10到13，跳转人偶2	
+                case 10:
+                    aimPic = 2;
+                    break;
+                case 11:
+                    aimPic = 2;
+                    break;
+                case 12:
+                    aimPic = 2;
+                    break;
+                case 13:
+                    aimPic = 2;
+                    break;
+
+                    // 当flag识别为14到16，跳转人偶3
+                case 14:
+                    aimPic = 3;
+                    break;
+                case 15:
+                    aimPic = 3;
+                    break;
+                case 16:
+                    aimPic = 3;
+                    break;
+
+                    // 当flag识别为17到20，跳转人偶4		
+                case 17:
+                    aimPic = 4;
+                    break;
+                case 18:
+                    aimPic = 4;
+                    break;
+                case 19:
+                    aimPic = 4;
+                    break;
+                case 20:
+                    aimPic = 4;
+                    break;
+
+                    // 当flag识别为21到23，跳转人偶5	
+                case 21:
+                    aimPic = 5;
+                    break;
+                case 22:
+                    aimPic = 5;
+                    break;
+                case 23:
+                    aimPic = 5;
+                    break;
+
+                    // 其余的不跳转
+                default:
+                    return;
+                    break;
+            }
+            swiper.slideToLoop((aimPic + 1) % 7);
+        }
+        /**
+         * 为主图片添加滑动响应事件
+         * 设置变量 flag追踪图片编号
+         * cnt 为监听到滑动的次数
+         */
+        if (flag < 0) {
+            flag = 1;
+        }
+        var cnt = 0;
+        var swipe = false;
+
+        /*
+         * 每次滑动可以多次改变图，即可以连续转动，当手指离开屏幕时停止
+         */
+
+        // 响应触控开始事件，记录当前的坐标值：startX和startY
+        $("#id_pic").on("touchstart", function (e) {
+            e.preventDefault();
+            startX = e.originalEvent.changedTouches[0].pageX;
+            startY = e.originalEvent.changedTouches[0].pageY;
+            swipe = false;
+        });
+
+        // 响应触控滑动事件，记录移动后停止的坐标值：moveX和moveY
+        $("#id_pic").on("touchmove", function (e) {
+            e.preventDefault();
+            moveEndX = e.originalEvent.changedTouches[0].pageX;
+            moveEndY = e.originalEvent.changedTouches[0].pageY;
+            swipe = true;
+
+            // 计算水平位移以及垂直位移
+            X = moveEndX - startX;
+            Y = moveEndY - startY;
+
+            // 每次监听到时间并且完成对位移的计算后，重置起始位置
+            startX = moveEndX;
+            startY = moveEndY;
+
+            // 对响应次数进行叠加
+            cnt++;
+
+            // 对滑动的方向进行判断
+            if (Math.abs(X) > Math.abs(Y) && Math.abs(X) > 1 && X > 0 && cnt > 5) {
+                // 如果水平位移量大于垂直位移量，位移量大于30，以及水平位移大于0，那么此滑动为向右滑动，当监听到滑动次数大于5时候响应改变
+
+                if (flag < 24) {
+
+                    // 向右滑动计数加1
+                    flag++;
+
+                    // 根据flag，更改图片
+                    $("#id_pic").attr("src", "img/" + flag.toString() + ".png");
+                    $("#id_pic").attr("usemap", "#map" + flag.toString());
+
+                    // 根据flag，轮播图进行跳转
+                    // slideToPic(flag);
+
+                } else {
+
+                    // 当flag大于等于24则从1开始重新递增计数
+                    flag = 1;
+
+                    // 根据flag，更改图片
+                    $("#id_pic").attr("src", "img/" + flag.toString() + ".png");
+                    $("#id_pic").attr("usemap", "#map" + flag.toString());
+
+                    // 根据flag，轮播图进行跳转
+                    // slideToPic(flag);
+                }
+
+                // 当发生相应时，响应结束后对计数变量 cnt 重置为0
+                cnt = 0;
+
+            } else if (Math.abs(X) > Math.abs(Y) && Math.abs(X) > 1 && X < 0 && cnt > 5) {
+                // 如果水平位移量大于垂直位移量，位移量大于30，以及水平位移小于0，那么此滑动为向左滑动，当监听到滑动次数大于5时候响应改变
+
+                if (flag > 1) {
+
+                    // 向左滑动计数减1
+                    flag--;
+
+                    // 根据flag，更改图片
+                    $("#id_pic").attr("src", "img/" + flag.toString() + ".png");
+                    $("#id_pic").attr("usemap", "#map" + flag.toString());
+
+                    // 根据flag，轮播图进行跳转
+                    // slideToPic(flag);
+
+                } else {
+
+                    // 当flag小于等于1则从24开始重新递增计数
+                    flag = 24;
+
+                    // 根据flag，更改图片
+                    $("#id_pic").attr("src", "img/" + flag.toString() + ".png");
+                    $("#id_pic").attr("usemap", "#map" + flag.toString());
+
+                    // 根据flag，轮播图进行跳转
+                    // slideToPic(flag);
+                }
+
+                // 当发生相应时，响应结束后对计数变量 cnt 重置为0
+                cnt = 0;
+
+            } else {
+
+            }
+        });
+
+        // 响应触控结束事件，记录移动后停止的坐标值：moveX和moveY
+        $("#id_pic").on("touchend", function (e) {
+            e.preventDefault();
+            moveEndX = e.originalEvent.changedTouches[0].pageX;
+            moveEndY = e.originalEvent.changedTouches[0].pageY;
+
+            // 计算水平位移以及垂直位移
+            X = moveEndX - startX;
+            Y = moveEndY - startY;
+
+            // 根据flag，轮播图进行跳转
+            slideToPic(flag);
+
+            if (!swipe) {
+                if (scaled) {
+                    $("#detail_prt").fadeOut(500);
+                    $("#id_pic").addClass("mainpic-transform-reset");
+                    $("#id_pic").removeClass("mainpic-transform");
+                    scaled = false;
+                    $("#itemName").fadeIn();
+                    stop();
+                    pre = 0;
+
+                } else {
+                   
+                }
+            }
+
+        });
+
+
+        
+
+        $(document).ready(function () {
+
+            $(".logo").fadeIn(1500);
+            $(".menu").fadeIn(1500);
+            setTimeout(() => {
+                // $(".header").fadeIn();
+                $(".header").animate({
+                    opacity: "1",
+                    filter: "alpha(opacity=100)"
+                }, 4000);
+                $(".main-pic").fadeIn(4000);
+            }, 2500);
+
+            $(document).on('click', function (e) {
+                console.log(e.target);
+                if (e.target.nodeName !== "IMG" && pre != 0) {
+
+                    $("#detail_prt").fadeOut(500);
+                    $("#id_pic").addClass("mainpic-transform-reset");
+                    $("#id_pic").removeClass("mainpic-transform");
+                    $("#itemName").fadeIn();
+                    pre = 0;
+                    stop();
+                }
+            });
+
+            $("#dtl-picture").click(function () {
+                $("#detail_prt").fadeOut(500);
+                $("#id_pic").addClass("mainpic-transform-reset");
+                $("#id_pic").removeClass("mainpic-transform");
+                $("#itemName").fadeIn();
+                pre = 0;
+                stop();
+            });
+
+        });
+
+        $(function () {
+            if (window.history && window.history.pushState) {
+                $(window).on('popstate', function () {
+                    window.history.pushState('forward', null, '#');
+                    window.history.forward(1);
+                });
+            }
+            window.history.pushState('forward', null, '#'); //在IE中必须得有这两行
+            window.history.forward(1);
+        });
+    </script>
+</body>
+
+</html>

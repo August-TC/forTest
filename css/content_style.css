@@ -1,0 +1,691 @@
+@font-face {
+
+	/* 方正宋三简体 */
+	font-family: 'SongSanJian';
+	src: url("../font/FangZheng-SongSanJian.ttf");
+}
+
+@font-face {
+
+	/* 文悦古典明朝体 */
+	font-family: 'WenyueGUDIAN';
+	src: url("../font/WenYue-GuDianMingChaoTi-NC-W5.otf");
+}
+
+html,
+body {
+
+	/* 主体布局大小 */
+	height: 100%;
+	width: 100%;
+
+	/* 主体布局位置 */
+	margin: 0px auto;
+}
+
+body {
+
+	/* 主题默认样式 */
+	font-family: SongSanJian, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color: gray;
+
+	/* 主体布局位置 */
+	margin: 0px auto;
+	overflow: hidden;
+	/* 禁用滚动 */
+
+	/* cursor:pointer; */
+	-webkit-tap-highlight-color: transparent;
+}
+
+/* 内容页面 样式 */
+.core {
+
+	/* 内容页面大小 */
+	width: 100%;
+	height: 100%;
+
+	/* 内容页面布局位置 */
+	margin: 0px auto;
+
+	/* 内容页面背景设置 */
+	background: url(../img/bg.jpg);
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	overflow: hidden;
+
+	/* 内部元素对齐方式 */
+	vertical-align: middle;
+}
+
+/* 左上角标志 样式 */
+.logo {
+
+	/* 标志大小 */
+	height: 4.5%;
+
+	/* 标志布局位置 */
+	position: absolute;
+	margin-top: 5%;
+	margin-left: 6%;
+	z-index: 100;
+
+	display: none;
+}
+
+/* 右上角菜单按钮 样式 */
+.menu {
+
+	/* 按钮大小 */
+	height: 4.5%;
+
+	/* 按钮布局位置 */
+	position: absolute;
+	z-index: 50;
+	top: 0px;
+	margin-top: 5%;
+	right: 6%;
+	padding: 0px;
+
+	/* 按钮背景边框 */
+	background-size: cover;
+	border: hidden;
+	outline: none;
+
+	display: none;
+}
+
+/* 标题部分 样式 */
+.header {
+
+	/* 标题部分大小 */
+	height: 6%;
+	width: 100%;
+
+	/* 标题部分布局位置 */
+	position: absolute;
+	top: 13%;
+	z-index: 50;
+	/* background: lightcoral; */
+
+	/* 标题部分内部元素对齐方式：水平垂直居中 */
+	display: table;
+	text-align: center;
+
+	/* 标题部分文字字体设置 */
+	font-family: WenyueGUDIAN;
+	font-size: 7vw;
+	letter-spacing: 2.5vw;
+
+	/* display: none; */
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+/* 内容部分 样式 */
+.content {
+
+	/* 内容部分布局位置 */
+	position: absolute;
+	top: 25%;
+	/* margin-top: 5%; */
+	bottom: 0px;
+
+	/* 内容部分大小 */
+	width: 100%;
+
+	background-color: blueviolet;
+	opacity: 0.5;
+}
+
+/* 细节展示区域 样式 */
+.detail-part {
+
+	/* 细节展示区域布局位置 */
+	position: absolute;
+	bottom: 20%;
+	top: 19%;
+	left: 54%;
+	margin: 10% 6%;
+
+	width: 34%;
+	/* background-color: darkcyan;
+	opacity: 0.5; */
+
+	display: none;
+
+}
+
+/* 细节图片展示区域 样式 */
+.detail-picture {
+	width: 100%;
+	height: 30%;
+	/* background-color: rgba(0, 132, 255, 0.5); */
+	margin: 0px auto;
+
+	/* 细节图片展示区域内部布局属性：flex布局 */
+	display: box;
+	/* OLD - Android 4.4- */
+	display: -webkit-box;
+	/* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;
+	/* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;
+	/* TWEENER - IE 10 */
+	display: -webkit-flex;
+	/* NEW - Chrome */
+	display: flex;
+	/* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+/* 细节图片展示 样式 */
+.detail-pic-img {
+
+	/* 细节图片展示大小 */
+	max-width: 100%;
+	max-height: 100%;
+
+	/* 细节图片展示布局位置 */
+	vertical-align: middle;
+	margin: auto;
+}
+
+/* 细节内容展示区域 样式 */
+.detail-content {
+	width: 88%;
+	height: 57.8%;
+	/* background-color: rgba(255, 251, 0, 0.5); */
+
+	padding-top: 10%;
+	margin: 0% 6%;
+
+	writing-mode: vertical-rl;
+	-webkit-writing-mode: vertical-rl;
+	-ms-writing-mode: vertical-rl;
+
+	overflow: scroll;
+
+	font-size: 4vw;
+	letter-spacing: 0.5vw;
+	line-height: 160%
+}
+
+::-webkit-scrollbar {
+	height: 0px;
+	width: 0px;
+	visibility: hidden;
+}
+
+/* 主图片展示区域 */
+.main-picture-part {
+
+	/* 主图片展示区域布局位置 */
+	position: absolute;
+	bottom: 20%;
+	top: 19%;
+	/* margin: 0px 6%; */
+
+	/* background-color: rgba(70, 70, 70, 0.5); */
+
+	/* 主图片展示区域大小 */
+	width: 100%;
+
+	/* 主图片展示区域内部布局属性：flex布局 */
+	display: box;
+	/* OLD - Android 4.4- */
+	display: -webkit-box;
+	/* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;
+	/* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;
+	/* TWEENER - IE 10 */
+	display: -webkit-flex;
+	/* NEW - Chrome */
+	display: flex;
+	/* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+/* 主图片展示 样式 */
+.main-pic {
+
+	/* 主图片展示大小 */
+	max-height: 140%;
+	max-width: 100%;
+
+	/* 主图片展示布局位置 */
+	margin: auto;
+	transform: translate(-7%, -5%);
+
+	display: none;
+}
+
+/* 主图片移动动画 设置 */
+.mainpic-transform {
+	animation: mainpicTransform 2s;
+	-moz-animation: mainpicTransform 2s;
+	/* Firefox */
+	-webkit-animation: mainpicTransform 2s;
+	/* Safari and Chrome */
+	-o-animation: mainpicTransform 2s;
+	/* Opera */
+
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+}
+
+@keyframes mainpicTransform {
+	from {}
+
+	to {
+		transform: scale(1.5) translate(-27.7%, -7.5%);
+	}
+}
+
+@-moz-keyframes mainpicTransform
+
+/* Firefox */
+	{
+	from {}
+
+	to {
+		transform: scale(1.5) translate(-27.7%, -7.5%);
+	}
+}
+
+@-webkit-keyframes mainpicTransform
+
+/* Safari and Chrome */
+	{
+	from {}
+
+	to {
+		transform: scale(1.5) translate(-27.7%, -7.5%);
+	}
+}
+
+@-o-keyframes mainpicTransform
+
+/* Opera */
+	{
+	from {}
+
+	to {
+		transform: scale(1.5) translate(-27.7%, -7.5%);
+	}
+}
+
+/* 主图片移动动画 设置 */
+.mainpic-transform-reset {
+	animation: mainpicTransformReset 2s;
+	-moz-animation: mainpicTransformReset 2s;
+	/* Firefox */
+	-webkit-animation: mainpicTransformReset 2s;
+	/* Safari and Chrome */
+	-o-animation: mainpicTransformReset 2s;
+	/* Opera */
+
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+}
+
+@keyframes mainpicTransformReset {
+	from {
+		transform: scale(1.5) translate(-27.7%, -7.5%)
+	}
+
+	to {
+		transform: translate(-7%, -5%);
+	}
+}
+
+@-moz-keyframes mainpicTransformReset
+
+/* Firefox */
+	{
+	from {
+		transform: scale(1.5) translate(-27.7%, -7.5%)
+	}
+
+	to {
+		transform: translate(-7%, -5%);
+	}
+}
+
+@-webkit-keyframes mainpicTransformReset
+
+/* Safari and Chrome */
+	{
+	from {
+		transform: scale(1.5) translate(-27.7%, -7.5%)
+	}
+
+	to {
+		transform: translate(-7%, -5%);
+	}
+}
+
+@-o-keyframes mainpicTransformReset
+
+/* Opera */
+	{
+	from {
+		transform: scale(1.5) translate(-27.7%, -7.5%);
+	}
+
+	to {
+		transform: translate(-7%, -5%);
+	}
+}
+
+/* 轮播图展示区域 样式 */
+.dock {
+
+	/* 轮播图展示区域布局位置 */
+	position: absolute;
+	bottom: 0px;
+	padding: 0% 6%;
+
+	/* 轮播图展示区域大小 */
+	height: 20%;
+	width: 88%;
+	/* background-color: aqua; */
+
+	/* 轮播图展示区域内部布局属性：flex布局 */
+	display: box;
+	/* OLD - Android 4.4- */
+	display: -webkit-box;
+	/* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;
+	/* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;
+	/* TWEENER - IE 10 */
+	display: -webkit-flex;
+	/* NEW - Chrome */
+	display: flex;
+	/* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+/* 包含轮播图的容器 样式 */
+.swiper-container {
+
+	/* 容器大小 */
+	width: 100%;
+	height: 100%;
+
+	/* 容器布局位置 */
+	margin: auto;
+	left: 100%;
+
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+/* 细节展示区域出现动画 设置 */
+.swiper-show {
+	animation: swiperShow 3s;
+	-moz-animation: swiperShow 3s;
+	/* Firefox */
+	-webkit-animation: swiperShow 3s;
+	/* Safari and Chrome */
+	-o-animation: swiperShow 3s;
+	/* Opera */
+
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+}
+
+@keyframes swiperShow {
+	from {
+		left: 100%;
+
+		opacity: 0;
+		filter: alpha(opacity=0);
+	}
+
+	to {
+		left: 0%;
+
+		opacity: 1;
+		filter: alpha(opacity=100);
+	}
+}
+
+@-moz-keyframes swiperShow
+
+/* Firefox */
+	{
+	from {
+		left: 100%;
+
+		opacity: 0;
+		filter: alpha(opacity=0);
+	}
+
+	to {
+		left: 0%;
+
+		opacity: 1;
+		filter: alpha(opacity=100);
+	}
+}
+
+@-webkit-keyframes swiperShow
+
+/* Safari and Chrome */
+	{
+	from {
+		left: 100%;
+
+		opacity: 0;
+		filter: alpha(opacity=0);
+	}
+
+	to {
+		left: 0%;
+
+		opacity: 1;
+		filter: alpha(opacity=100);
+	}
+}
+
+@-o-keyframes swiperShow
+
+/* Opera */
+	{
+	from {
+		left: 100%;
+
+		opacity: 0;
+		filter: alpha(opacity=0);
+	}
+
+	to {
+		left: 0%;
+
+		opacity: 1;
+		filter: alpha(opacity=100);
+	}
+}
+
+.swiper-slide {
+
+	width: 100%;
+	/* margin-left: -1.2%; */
+	text-align: center;
+	font-size: 18px;
+
+	/* 轮播图展示区域内部布局属性：flex布局 */
+	display: box;
+	/* OLD - Android 4.4- */
+	display: -webkit-box;
+	/* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;
+	/* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;
+	/* TWEENER - IE 10 */
+	display: -webkit-flex;
+	/* NEW - Chrome */
+	display: flex;
+	/* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+	cursor: pointer;
+}
+
+.swiper-slide img {
+	max-width: 100%;
+	/* max-height: 90%; */
+	/* margin-left: -70px; */
+	margin: auto;
+
+	cursor: pointer;
+}
+
+.swiper-pagination {
+	position: static;
+	/* top: 36.5%; */
+	text-align: center;
+	-webkit-transition: .3s opacity;
+	-o-transition: .3s opacity;
+	transition: .3s opacity;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	z-index: 10;
+}
+
+/* 内容页面 样式 */
+.menu-core {
+	display: none;
+	/* 内容页面大小 */
+	width: 100%;
+	height: 100%;
+
+	/* 内容页面布局位置 */
+	position: absolute;
+	z-index: 75;
+	top: 0%;
+	margin: 0px auto;
+
+	/* 内容页面背景设置 */
+	background: url(../img/bg.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	background-attachment: fixed;
+
+	/* 内部元素对齐方式 */
+	vertical-align: middle;
+}
+
+/* 选项列表 样式 */
+.menu-list {
+
+	/* 选项列表大小 */
+	width: 72%;
+	height: 45%;
+
+	/* 选项列表布局位置 */
+	margin: 0px auto;
+	position: absolute;
+	top: 27%;
+	left: 50%;
+	margin-left: -36%;
+
+	display: none;
+
+}
+
+/* 单个选项 样式*/
+.menu-item {
+	width: 100%;
+	height: 25%;
+
+	/* 单个选项内部元素对齐方式：水平垂直居中 */
+	display: table;
+	text-align: center;
+
+	/* 单个选项文字字体设置 */
+	font-family: WenyueGUDIAN;
+	font-size: 6vw;
+	letter-spacing: 2.5vw;
+	text-align: left;
+}
+
+.pinch-zoom,
+.pinch-zoom img {
+	width: 100%;
+	-webkit-user-drag: none;
+	-moz-user-drag: none;
+	-ms-user-drag: none;
+	display: none;
+	/* user-drag: none; */
+}
+
+.pinch-zoom-container {
+	margin: auto;
+	width: 100%;
+	overflow: unset !important;
+}
+
+.zoom-bg {
+	width: 100%;
+	height: 100%;
+	background: rgba(31, 31, 31, 0.9);
+	position: absolute;
+	z-index: 500;
+
+	display: box;
+	/* OLD - Android 4.4- */
+	display: -webkit-box;
+	/* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;
+	/* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;
+	/* TWEENER - IE 10 */
+	display: -webkit-flex;
+	/* NEW - Chrome */
+	display: flex;
+	/* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.close {
+	/* 按钮大小 */
+	height: 5vh;
+
+	/* 按钮布局位置 */
+	position: absolute;
+	z-index: 501;
+	top: 0px;
+	margin-top: 5%;
+	right: 6%;
+	padding: 0px;
+
+	border: hidden;
+	outline: none;
+	color: gray;
+	font-size: 5vw;
+	background-color: rgba(31, 31, 31, 0);
+}
+
+/* 页脚 样式 */
+.footer {
+
+	/* 页脚区域大小 */
+	width: 90%;
+
+	/* 页脚布局位置 */
+	position: absolute;
+	left: 50%;
+	bottom: 3%;
+	margin-left: -45%;
+
+	/* 页脚文字字体 */
+	color: gray;
+	font-size: 3vw;
+}
