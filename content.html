@@ -16,7 +16,13 @@
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <style>
         .swiper-container{
-            cursor:pointer
+            cursor:pointer;
+        }
+        .swiper-wrapper{
+            cursor:pointer;
+        }
+        .swiper-slide{
+            cursor:pointer;
         }
     </style>
 </head>
@@ -438,8 +444,8 @@
                 },
 
                 click: function (e) {
-                    console.log(e.target);
-                    switch (e.path[1].id) {
+                    console.log(e);
+                    switch (e.target.parentNode.id) {
                         case "slide1":
                             showDetail(1);
                             break;

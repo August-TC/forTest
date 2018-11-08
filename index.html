@@ -176,6 +176,12 @@
         let element = this;
         var flag = -1;
 
+        $(".swiper-slide img").click(function (event) {
+            console.log(event);
+        });
+        
+        
+
         /**
          * 初始化轮播图，同时配置轮播图
          */
@@ -227,46 +233,46 @@
                         "ms"
                 },
 
-                tap: function (e) {
-                    var mp = -1;
-                    console.log(e.path[1].id);
-                    alert(e.path[1].id);
-                    switch (e.path[1].id) {
-                        case "slide1":
-                            showDetail(1);
-                            mp = 9;
-                            break;
-                        case "slide2":
-                            showDetail(2);
-                            mp = 12;
-                            break;
-                        case "slide3":
-                            showDetail(3);
-                            mp = 15;
-                            break;
-                        case "slide4":
-                            showDetail(4);
-                            mp = 18;
-                            break;
-                        case "slide5":
-                            showDetail(5);
-                            mp = 22;
-                            break;
-                        case "slide6":
-                            showDetail(6);
-                            mp = 1;
-                            break;
-                        case "slide7":
-                            showDetail(7);
-                            mp = 3;
-                            break;
-                        default:
-                            return;
-                            break;
-                    }
-                    flag = mp;
-                    $("#id_pic").attr("src", "img/" + mp.toString() + ".png");
-                },
+                // tap: function (e) {
+                //     var mp = -1;
+                //     console.log(e.path[1].id);
+                //     alert(e.path[1].id);
+                //     switch (e.path[1].id) {
+                //         case "slide1":
+                //             showDetail(1);
+                //             mp = 9;
+                //             break;
+                //         case "slide2":
+                //             showDetail(2);
+                //             mp = 12;
+                //             break;
+                //         case "slide3":
+                //             showDetail(3);
+                //             mp = 15;
+                //             break;
+                //         case "slide4":
+                //             showDetail(4);
+                //             mp = 18;
+                //             break;
+                //         case "slide5":
+                //             showDetail(5);
+                //             mp = 22;
+                //             break;
+                //         case "slide6":
+                //             showDetail(6);
+                //             mp = 1;
+                //             break;
+                //         case "slide7":
+                //             showDetail(7);
+                //             mp = 3;
+                //             break;
+                //         default:
+                //             return;
+                //             break;
+                //     }
+                //     flag = mp;
+                //     $("#id_pic").attr("src", "img/" + mp.toString() + ".png");
+                // },
 
                 touchEnd: function (e) {
                     var mp = -1;
