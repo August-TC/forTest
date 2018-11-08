@@ -423,6 +423,8 @@ body {
 
 	opacity: 0;
 	filter: alpha(opacity=0);
+
+	cursor: pointer;
 }
 
 /* 细节展示区域出现动画 设置 */
