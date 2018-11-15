@@ -677,13 +677,19 @@ body {
 }
 
 .intro-help-layer {
-	background: rgba(31, 31, 31, 1);
+	background: rgba(31, 31, 31, 0);
 	box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	border: 1vw solid;
 	border-color: white;
 	border-style: outset;
+
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+
+	z-index: 10000000;
 }
 
 /* 页脚 样式 */
