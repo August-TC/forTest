@@ -484,12 +484,11 @@
         function setCookie() {
             var now = new Date();
             var time = now.getTime();
-            time += 3600 * 1000;
-            now.setTime(time);
-            document.cookie =
-                'visited=has' +
-                '; expires=' + now.toUTCString() +
-                '; path=/';
+            var expireTime = time + 1000 * 36000;
+            now.setTime(expireTime);
+            var tempExp = 'Wed, 31 Oct 2012 08:50:17 GMT';
+            document.cookie = 'visited=has;expires=' + now.toGMTString() + ';path=/';
+            console.log(document.cookie);
         }
 
         function getCookie() {
