@@ -681,9 +681,9 @@ body {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
-	border: 1vw solid;
+	border: 1vw;
 	border-color: white;
-	border-style: outset;
+	border-style: dotted;
 
 	-moz-border-radius: 50px;
 	-webkit-border-radius: 50px;
