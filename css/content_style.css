@@ -43,11 +43,12 @@ body {
 .core {
 
 	/* 内容页面大小 */
-	width: 100%;
+	width: 94%;
 	height: 100%;
 
 	/* 内容页面布局位置 */
 	margin: 0px auto;
+	padding: 0% 3%;
 
 	/* 内容页面背景设置 */
 	background: url(../img/bg.jpg);
@@ -231,7 +232,7 @@ body {
 	/* background-color: rgba(70, 70, 70, 0.5); */
 
 	/* 主图片展示区域大小 */
-	width: 100%;
+	width: 94%;
 
 	/* 主图片展示区域内部布局属性：flex布局 */
 	display: box;
@@ -388,7 +389,7 @@ body {
 	/* 轮播图展示区域布局位置 */
 	position: absolute;
 	bottom: 0px;
-	padding: 0% 6%;
+	padding: 3% 3%;
 
 	/* 轮播图展示区域大小 */
 	height: 20%;
@@ -673,6 +674,16 @@ body {
 	color: gray;
 	font-size: 5vw;
 	background-color: rgba(31, 31, 31, 0);
+}
+
+.intro-help-layer {
+	background: rgba(31, 31, 31, 1);
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	border: 1vw solid;
+	border-color: white;
+	border-style: outset;
 }
 
 /* 页脚 样式 */

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>全屏div</title>
+		<style>
+			html,
+			body {
+				margin: 0;
+				height: 100%;
+			}
+			
+			#test {
+				width: 100%;
+				height: 100%;
+				background-color: #000;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 20000;
+				opacity: 0.3;
+				/*兼容IE8及以下版本浏览器*/
+				filter: alpha(opacity=30);
+				display: block;
+			}
+			
+			#log_window {
+				width: 200px;
+				height: 200px;
+				background-color: #999999;
+				margin: auto;
+				position: absolute;
+				z-index: 20003;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				display: block;
+			}
+		</style>
+		<script>
+			
+
+			function cancel_shield() {
+				var s = document.getElementById("test");
+				s.style.display = "none";
+
+				var l = document.getElementById("log_window");
+				l.style.display = "none";
+			}
+		</script>
+	</head>
+
+	<body>
+		
+		<div id="test"></div>
+		<div id="log_window">
+			<p>点击菜单和人偶</p>
+			<a href="javascript:cancel_shield()">确认</a>
+		</div>
+	</body>
+
+</html>
