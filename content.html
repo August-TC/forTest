@@ -484,15 +484,14 @@
         function setCookie() {
             var now = new Date();
             var time = now.getTime();
-            var expireTime = time + 1000 * 36000;
+            var expireTime = time + 1000 * 3;
             now.setTime(expireTime);
-            var tempExp = 'Wed, 31 Oct 2012 08:50:17 GMT';
             document.cookie = 'visited=has;expires=' + now.toUTCString() + ';path=/';
-            console.log(document.cookie);
         }
 
         function getCookie() {
             if (document.cookie.length > 0) {
+                console.log(document.cookie);
                 var c_name = "visited"
                 c_start = document.cookie.indexOf("visited=")
                 if (c_start != -1) {
