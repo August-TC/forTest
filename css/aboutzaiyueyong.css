@@ -104,12 +104,12 @@ body {
 	/* 提示信息字体样式 */
 	font-family: WenyueGUDIAN, STFangsong, FangSong_GB2312, 'myFont';
 	color: gray;
-	line-height: 40px;
+	/*line-height: 40px;*/
 }
 
 .about_hint p {
 	width: 100%;
-	height: 30px;
+	
 	margin: 0 auto;
 	text-align: center;
 	font-size: 7vw;
@@ -135,20 +135,19 @@ body {
 
 	/* 载乐俑介绍区域布局位置 */
 	position: absolute;
-	top: 55%;
+	/*
 	bottom: 0px;
-	margin: 10%;
+	
+	
 	margin-bottom: 20%;
-	margin-top: 10px;
-	/* padding: 3%; */
-
+	*/
+	  margin-top: 10px;
+	 top: 55%;
+bottom: 8%;
+margin: 10%;
 	/* 载乐俑介绍区域大小 */
-	width: 82%;
+	width: 80%;
 	overflow: auto;
-
-	/* 载乐俑介绍区域背景设置 */
-	/*background-color: rgba(70, 90, 100, 0.5);*/
-	/* 设置圆角 */
 	border: 0px;
 
 }
@@ -163,7 +162,7 @@ body {
 	font-family: SongSanJian, STFangsong, FangSong_GB2312, 'myFont';
 	text-indent: 2em;
 	text-align: left;
-	line-height: 28px;
+	/*line-height: 28px;*/
 	color: gray;
 	font-size: 4vw;
 }
@@ -171,7 +170,7 @@ body {
 
 
 .liuyan_pic {
-	padding-top: 30px;
+	padding-top: 20px;
 	margin-left: 10%;
 	width: 80%;
 	/* hight: 35%; */
@@ -218,7 +217,7 @@ body {
 	border: 2px solid #a1a1a1;
 	position: relative;
 	background-color: grey;
-	border-radius: 7px;
+	border-radius: 10px;
 }
 
 .arrow * {

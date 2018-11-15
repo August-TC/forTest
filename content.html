@@ -481,6 +481,52 @@
             },
         });
 
+        function setCookie() {
+            var now = new Date();
+            var time = now.getTime();
+            time += 3600 * 1000;
+            now.setTime(time);
+            document.cookie =
+                'visited=has' +
+                '; expires=' + now.toUTCString() +
+                '; path=/';
+        }
+
+        function getCookie() {
+            if (document.cookie.length > 0) {
+                c_start = document.cookie.indexOf("visited=")
+                if (c_start != -1) {
+                    c_start = c_start + c_name.length + 1
+                    c_end = document.cookie.indexOf(";", c_start)
+                    if (c_end == -1) c_end = document.cookie.length
+                    return unescape(document.cookie.substring(c_start, c_end))
+                }
+            }
+            return ""
+        }
+
+        function checkCookie() {
+            var name = getCookie()
+            if (name != null && name != "") {
+
+            } else {
+                setCookie();
+                introJs().setOptions({
+                    showBullets: false,
+                    showStepNumbers: false,
+                    highlightClass: "intro-help-layer",
+                    overlayOpacity: "1",
+                    nextLabel: "继续",
+                    prevLabel: "上一个",
+                    skipLabel: "跳过",
+                    doneLabel: "完成",
+                    disableInteraction: true,
+                    hidePrev: true,
+                    hideNext: true,
+                }).start().refresh();
+            }
+        }
+
         $(document).ready(function () {
 
             $(".logo").fadeIn(1500);
@@ -542,19 +588,20 @@
                 $("#info").fadeOut(1500);
             });
 
-            introJs().setOptions({
-                showBullets: false,
-                showStepNumbers: false,
-                highlightClass: "intro-help-layer",
-                overlayOpacity: "1",
-                nextLabel: "继续",
-                prevLabel: "上一个",
-                skipLabel: "跳过",
-                doneLabel: "完成",
-                disableInteraction:true,
-                hidePrev:true,
-                hideNext:true,
-            }).start().refresh();
+            // introJs().setOptions({
+            //     showBullets: false,
+            //     showStepNumbers: false,
+            //     highlightClass: "intro-help-layer",
+            //     overlayOpacity: "1",
+            //     nextLabel: "继续",
+            //     prevLabel: "上一个",
+            //     skipLabel: "跳过",
+            //     doneLabel: "完成",
+            //     disableInteraction:true,
+            //     hidePrev:true,
+            //     hideNext:true,
+            // }).start().refresh();
+            checkCookie();
         });
 
         $(function () {
