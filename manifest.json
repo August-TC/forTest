@@ -1,8 +1,9 @@
 {
     "short_name": "Kinlan's Amaze App",
     "name": "Kinlan's Amazing Application ++",
-    
+
     "start_url": "content.html",
-    "display": "standalone"
+    "display": "fullscreen",
+    "orientation": "portrait"
 
 }
