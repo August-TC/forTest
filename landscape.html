@@ -3,75 +3,110 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- jQuery js库 -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+
     <style>
-        #content {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        @media screen and (orientation: portrait) {
+            html {
+                width: 100%;
+                height: 100%;
+                background-color: white;
+                overflow: hidden;
+            }
+
+            body {
+                width: 100%;
+                height: 100%;
+                background-color: red;
+                overflow: hidden;
+            }
+
+            #print {
+                position: absolute;
+                background-color: yellow;
+            }
         }
 
-        #content p {
+        @media screen and (orientation: landscape) {
+            html {
+                width: 100%;
+                height: 100%;
+                background-color: white;
+            }
+
+            body {
+                width: 100%;
+                height: 100%;
+                background-color: white;
+            }
+
+            #print {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: yellow;
+            }
+        }
+
+        #print p {
             margin: auto;
             margin-top: 20px;
             text-align: center;
         }
-
-        img {
-            width: 100px;
-        }
     </style>
 </head>
 
-<body>
-    <div id="content">
-        <p>谁说html5不能横屏的。。。</p>
-        <p>我就是要横屏。。。</p>
-        <p>要横屏。。。</p>
-        <p>横屏。。。</p>
-        <p>屏。。。</p>
-        <p>图片也是可以的。<img src="img/1.png" /></p>
+<body class="webpBack">
+    <div id="print">
+        <p>lol</p>
     </div>
+</body>
 
-    <script>
-        const width = document.documentElement.clientWidth;
-        const height = document.documentElement.clientHeight;
-        if (width < height) {
-            console.log(width + " " + height);
-            const contentDOM = document.getElementById('content');
-            contentDOM.style.width = height + 'px';
-            contentDOM.style.height = width + 'px';
-            contentDOM.style.top = (height - width) / 2 + 'px';
-            contentDOM.style.left = 0 - (height - width) / 2 + 'px';
-            contentDOM.style.transform = 'rotate(90deg)';
+<script>
+    var width = document.documentElement.clientWidth;
+    var height = document.documentElement.clientHeight;
+    if (width < height) {
+        console.log(width + " " + height);
+        $print = $('#print');
+        $print.width(height);
+        $print.height(width);
+        $print.css('top', (height - width) / 2);
+        $print.css('left', 0 - (height - width) / 2);
+        $print.css('transform', 'rotate(90deg)');
+        $print.css('transform-origin', '50% 50%');
+    }
+
+    var evt = "onorientationchange" in window ? "orientationchange" : "resize";
+
+    window.addEventListener(evt, function () {
+        console.log(evt);
+        var width = document.documentElement.clientWidth;
+        var height = document.documentElement.clientHeight;
+        $print = $('#print');
+        if (width > height) {
+
+            $print.width(width);
+            $print.height(height);
+            $print.css('top', 0);
+            $print.css('left', 0);
+            $print.css('transform', 'none');
+            $print.css('transform-origin', '50% 50%');
+        } else {
+            $print.width(height);
+            $print.height(width);
+            $print.css('top', (height - width) / 2);
+            $print.css('left', 0 - (height - width) / 2);
+            $print.css('transform', 'rotate(90deg)');
+            $print.css('transform-origin', '50% 50%');
         }
 
-        const evt = "onorientationchange" in window ? "orientationchange" : "resize";
-        window.addEventListener(evt, function () {
-            const width = document.documentElement.clientWidth;
-            const height = document.documentElement.clientHeight;
-            const contentDOM = document.getElementById('content');
-            alert('width: ' + width + ' height: ' + height)
-            if (width > height) { // 横屏
-                contentDOM.style.width = width + 'px';
-                contentDOM.style.height = height + 'px';
-                contentDOM.style.top = '0px';
-                contentDOM.style.left = '0px';
-                contentDOM.style.transform = 'none';
-            } else { // 竖屏，这里微信应该由bug，我切换为竖屏的时候，width:375, height: 323, 导致不能旋转角度。 在safari、chrome上是正确的。
-                alert('change to portrait')
-                contentDOM.style.width = height + 'px';
-                contentDOM.style.height = width + 'px';
-                contentDOM.style.top = (height - width) / 2 + 'px';
-                contentDOM.style.left = 0 - (height - width) / 2 + 'px';
-                contentDOM.style.transform = 'rotate(90deg)'; 
-            }
-
-        }, false);
-    </script>
-
-</body>
+    }, false);
+</script>
 
 </html>
