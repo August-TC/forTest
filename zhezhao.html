@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
 
     //准备一个按钮
@@ -16,7 +18,7 @@
     //定义一个变量进行判断，默认false 非全屏状态
     let exitFullscreen = false
     // 全屏事件
-    function handleFullScreen(){
+    function handleFullScreen() {
         let element = document.documentElement;
         if (this.fullscreen) {
             if (document.exitFullscreen) {
@@ -41,6 +43,48 @@
             }
         }
     }
+
+    function DeviceOrientationHandler(event) {
+        var alpha = event.alpha,
+            beta = event.beta,
+            gamma = event.gamma;
+
+        if (alpha != null || beta != null || gamma != null) {
+            dataContainerOrientation.innerHTML = "alpha:" + alpha + "<br />beta:" + beta + "<br />gamma:" + gamma;
+            //判断屏幕方向
+            var html = "";
+            if (Math.abs(gamma) < GAMMA_MIN && Math.abs(beta) > BETA_MAX) {
+                html = "屏幕方向：Portrait";
+            }
+
+            if (Math.abs(beta) < BETA_MIN && Math.abs(gamma) > GAMMA_MAX) {
+                html = "屏幕方向：Landscape";
+            }
+
+            var gamma_html = "";
+            if (gamma > 0) {
+                gamma_html = "向右倾斜";
+            } else {
+                gamma_html = "向左倾斜";
+            }
+            html += "<br />" + gamma_html
+            stage.innerHTML = html;
+        } else {
+            dataContainerOrientation.innerHTML = "当前浏览器不支持DeviceOrientation";
+        }
+    }
+
+
+    window.onload = function () {
+        handleFullScreen();
+
+        if (window.DeviceOrientationEvent) {
+            window.addEventListener('deviceorientation', DeviceOrientationHandler, false);
+        } else {
+            alert("您的浏览器不支持DeviceOrientation");
+        }
+
+    };
 </script>
 
 </html>

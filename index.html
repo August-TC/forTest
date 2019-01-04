@@ -91,7 +91,6 @@
 
     <!-- 内置JS -->
     <script type="text/javascript">
-
         $("#dock-swiper").addClass("swiper-show");
 
         var pre = 0;
@@ -179,8 +178,8 @@
         $(".swiper-slide img").click(function (event) {
             console.log(event);
         });
-        
-        
+
+
 
         /**
          * 初始化轮播图，同时配置轮播图
@@ -574,16 +573,103 @@
                     pre = 0;
 
                 } else {
-                   
+
                 }
             }
 
         });
 
 
-        
+
 
         $(document).ready(function () {
+
+            const head = document.head;
+            const script = document.createElement('script');
+            script.src = 'http://res.wx.qq.com/open/js/jweixin-1.4.0.js';
+            head.appendChild(script);
+
+            wx.config({
+                debug: false,
+                appId: "wx5ec3d35069383211",
+                timestamp: 1543803337,
+                nonceStr: "icFmwhqwtbmweBfv",
+                signature: "E0710B6E4A54C4296DF7C215668AAB216A945DAE",
+                jsApiList: [
+                    "onMenuShareTimeline",
+                    "onMenuShareAppMessage",
+                    "onMenuShareQQ",
+                    "onMenuShareWeibo",
+                    "onMenuShareQZone",
+                    "chooseImage",
+                    "previewImage"
+                ],
+            });
+            wx.ready(function () {
+                // 在这里调用 API
+                wx.onMenuShareTimeline({
+                    title: 'title', // 分享标题
+                    link: 'link', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                    imgUrl: '', // 分享图标
+                    success: function () {
+                        // 用户确认分享后执行的回调函数
+                    },
+                    cancel: function () {
+                        // 用户取消分享后执行的回调函数
+                    }
+                });
+
+                wx.onMenuShareAppMessage({
+                    title: '', // 分享标题
+                    desc: '', // 分享描述
+                    link: '', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                    imgUrl: '', // 分享图标
+                    type: '', // 分享类型,music、video或link，不填默认为link
+                    dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                    success: function () {
+                        // 用户点击了分享后执行的回调函数
+                    }
+                });
+
+                wx.onMenuShareQQ({
+                    title: '', // 分享标题
+                    desc: '', // 分享描述
+                    link: '', // 分享链接
+                    imgUrl: '', // 分享图标
+                    success: function () {
+                        // 用户确认分享后执行的回调函数
+                    },
+                    cancel: function () {
+                        // 用户取消分享后执行的回调函数
+                    }
+                });
+
+                wx.onMenuShareWeibo({
+                    title: '', // 分享标题
+                    desc: '', // 分享描述
+                    link: '', // 分享链接
+                    imgUrl: '', // 分享图标
+                    success: function () {
+                        // 用户确认分享后执行的回调函数
+                    },
+                    cancel: function () {
+                        // 用户取消分享后执行的回调函数
+                    }
+                });
+
+                wx.onMenuShareQZone({
+                    title: '', // 分享标题
+                    desc: '', // 分享描述
+                    link: '', // 分享链接
+                    imgUrl: '', // 分享图标
+                    success: function () {
+                        // 用户确认分享后执行的回调函数
+                    },
+                    cancel: function () {
+                        // 用户取消分享后执行的回调函数
+                    }
+                });
+            });
 
             $(".logo").fadeIn(1500);
             $(".menu").fadeIn(1500);
