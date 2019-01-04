@@ -12,6 +12,13 @@
 
     //准备一个按钮
     <button onclick="handleFullScreen()">全屏</button>
+    <div id="dataContainerOrientation">
+
+    </div>
+
+    <div id="stage">
+
+    </div>
 
 </body>
 <script>
@@ -50,7 +57,7 @@
             gamma = event.gamma;
 
         if (alpha != null || beta != null || gamma != null) {
-            dataContainerOrientation.innerHTML = "alpha:" + alpha + "<br />beta:" + beta + "<br />gamma:" + gamma;
+            document.getElementById("dataContainerOrientation").innerHTML = "alpha:" + alpha + "<br />beta:" + beta + "<br />gamma:" + gamma;
             //判断屏幕方向
             var html = "";
             if (Math.abs(gamma) < GAMMA_MIN && Math.abs(beta) > BETA_MAX) {
@@ -68,9 +75,9 @@
                 gamma_html = "向左倾斜";
             }
             html += "<br />" + gamma_html
-            stage.innerHTML = html;
+            document.getElementById("stage").innerHTML = html;
         } else {
-            dataContainerOrientation.innerHTML = "当前浏览器不支持DeviceOrientation";
+            document.getElementById("dataContainerOrientation").innerHTML = "当前浏览器不支持DeviceOrientation";
         }
     }
 
