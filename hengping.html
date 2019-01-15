@@ -40,12 +40,12 @@
         text-align: center;
         background-color: #fff
     }
-    @media screen and (orientation: landscape) {
+    @media screen and (orientation: portrait) {
         .main {
-            -webkit-transform:rotate(-90deg);
-            -moz-transform: rotate(-90deg);
-            -ms-transform: rotate(-90deg);
-            transform: rotate(-90deg);
+            -webkit-transform:rotate(0);
+            -moz-transform: rotate(0);
+            -ms-transform: rotate(0);
+            transform: rotate(0);
             width: 100vh;
             height: 100vh;
             /*去掉overflow 微信显示正常，但是浏览器有问题，竖屏时强制横屏缩小*/
@@ -53,12 +53,13 @@
         }
         
     }
-    @media screen and (orientation: portrait) {
+    @media screen and (orientation: landscape) {
         .main {
-            -webkit-transform:rotate(0);
-            -moz-transform: rotate(0);
-            -ms-transform: rotate(0);
-            transform: rotate(0)
+            -webkit-transform:rotate(-90deg);
+            -moz-transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+            
         }
     }
   </style>
